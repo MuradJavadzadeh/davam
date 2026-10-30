@@ -972,8 +972,8 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b
  else if(a=='create')create();
  else if(a=='login'){if(!window.FBX){toast(tr('Bulud xidməti yüklənmədi. İnterneti yoxla.'));return}FBX.login().catch(e=>{if(!e||e.code!='auth/popup-closed-by-user'&&e.code!='auth/cancelled-popup-request')toast(tr('Giriş alınmadı')+(e&&e.code?' ('+e.code+')':''))})}
  else if(a=='logout'){if(DC=='lo')clogout();else{DC='lo';render()}}
- else if(a=='cfc'){const r=CF.r;CF=null;capply(r);clisten();toast(tr('Buludla sinxronlaşdırıldı'))}
- else if(a=='cfl'){CH=new Map(Object.entries(CF.r).map(([k,v])=>[k,v.d]));CF=null;S.uid=CL.u.uid;save();cflush();clisten();render();toast(tr('Buludla sinxronlaşdırıldı'))}
+ else if(a=='cfc'){const r=CF.r;CF=null;capply(r);CL.rdy=1;fstart();toast(tr('Buludla sinxronlaşdırıldı'))}
+ else if(a=='cfl'){CH=new Map(Object.entries(CF.r).map(([k,v])=>[k,v.d]));CF=null;S.uid=CL.u.uid;CL.rdy=1;save();cflush();fstart();render();toast(tr('Buludla sinxronlaşdırıldı'))}
  else if(a=='unsave'){const i=$('#un');funame(i&&i.value).then(()=>{if(CL.me&&CL.me.uname==((i&&i.value)||'').trim().toLowerCase().replace(/^@/,'')){CL.une=0;render()}})}
  else if(a=='unedit'){CL.une=1;render()}
  else if(a=='unx'){CL.une=0;render()}
@@ -987,9 +987,9 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b
  else if(a=='fback'){CL.fv=null;DC='';anim=1;render()}
  else if(a=='funf'){if(DC=='uf')funf(CL.fv.uid);else{DC='uf';render()}}
  else if(a=='finv'){const l=invl(),t=tr('Davam-da mənə qoşul, bir-birimizin seriyalarını görək:');if(navigator.share)navigator.share({title:'Davam',text:t,url:l}).catch(()=>{});else navigator.clipboard.writeText(t+' '+l).then(()=>toast(tr('Link kopyalandı')),()=>toast(l))}
- else if(a=='pv'){const k=b.dataset.k,pv=PV();pv[k]=pv[k]?0:1;S.pv=pv;save();render()}
- else if(a=='hid'){if(it.hid)delete it.hid;else it.hid=1;save();render()}
- else if(a=='cfx'){CF=null;FBX.out();CL.u=null;render()}});
+ else if(a=='pv'){const k=b.dataset.k,pv=PV();pv[k]=pv[k]?0:1;S.pv=pv;save();cpub(1);render()}
+ else if(a=='hid'){if(it.hid)delete it.hid;else it.hid=1;save();cpub(1);render()}
+ else if(a=='cfx'){CF=null;if(CU)CU();CU=null;FBX.out();CL.u=null;CL.rdy=0;render()}});
 document.addEventListener('change',e=>{const t=e.target;
  if(t.id=='imp'&&t.files[0])imp(t.files[0]);
  if(t.dataset.a=='min'){const it=S.items.find(x=>x.id==t.dataset.id),k=t.dataset.k||dk(T0()),l={...L(it,k)};l.m=Math.max(0,Math.round(+t.value)||0);pop=it.id;setL(it,l,k)}});
@@ -1071,11 +1071,11 @@ function cfrom(r){const n={items:[],pl:{t:[],c:[],r:[]},md:{},mn:{}};let ord=nul
  return n}
 const cst=()=>{if(D||CF)render()};
 function cput(k,v){const uid=CL.u.uid;CL.pend++;cst();FBX.put(uid,k,v).then(()=>{CL.err=''},e=>{CL.err=String((e&&e.code)||e)}).finally(()=>{CL.pend--;CD.delete(k);cst()})}
-function cflush(){if(!CL.u||!window.FBX||CF)return;const o=cdocs();
+function cflush(){if(!CL.u||!window.FBX||CF||!CL.rdy)return;const o=cdocs();
  for(const k in o)if(CH.get(k)!==o[k].d){CH.set(k,o[k].d);CD.add(k);cput(k,{...o[k],mt:Date.now()})}
  for(const k of [...CH.keys()])if(!(k in o)&&k!='pub'){CH.delete(k);CD.add(k);cput(k,null)}
  cpub()}
-function cpush(){if(!CL.u||!window.FBX||CF)return;clearTimeout(CT);CT=setTimeout(cflush,500)}
+function cpush(){if(!CL.u||!window.FBX||CF||!CL.rdy)return;clearTimeout(CT);CT=setTimeout(cflush,500)}
 // Başqa cihazdan gələn dəyişikliklər. Bu cihazda hələ göndərilməmiş sənədlərə toxunulmur.
 function cremote(ch){let n=0;
  for(const c of ch){const k=c.id;if(c.local||CD.has(k))continue;const d=c.data?c.data.d:null;
@@ -1086,14 +1086,15 @@ function cremote(ch){let n=0;
   else if(k=='main'){if(v.bk)S.bk=v.bk;S.bx=v.bx||'';if(v.pv)S.pv=v.pv;if(v.ord)cord(v.ord)}}
  if(n){adopt(S);save();render()}}
 function capply(r){const n=cfrom(r);n.uid=CL.u.uid;n.rv=S.rv;if(!n.bk&&S.bk)n.bk=S.bk;adopt(n);CH=new Map(Object.entries(r).map(([k,v])=>[k,v.d]));save();anim=1;render()}
-function clisten(){if(CU)CU();CU=FBX.listen(CL.u.uid,cremote);fstart()}
-async function cstart(u){CL.u=u;CL.err='';CH=new Map();CD=new Set();cst();
- let r;try{r=await FBX.all(u.uid)}catch(e){CL.err=String((e&&e.code)||e);toast(tr('Bulud məlumatı yüklənmədi. İnterneti yoxla.'));cst();return}
- const has=Object.keys(r).length>0,loc=S.items.some(i=>!i.demo)||S.pl.t.some(q=>!q.demo)||(S.pl.r||[]).length>0;
- if(!has){S.uid=u.uid;save();cflush()}
- else if(S.uid==u.uid||!loc)capply(r);
+// Bir dinləyici həm ilk yükləməni, həm də sonrakı dəyişiklikləri verir (məlumat bir dəfə oxunur).
+// Yeni cihazda və ya başqa hesabda serverdən cavab gözlənilir; bu cihaz eyni hesabındırsa, yaddaşdakı nüsxə ilə dərhal başlayır.
+function cstart(u){CL.u=u;CL.err='';CL.rdy=0;CH=new Map();CD=new Set();cst();if(CU)CU();
+ CU=FBX.listen(u.uid,x=>{if(CL.rdy){cremote(x.ch);return}if(CF||(x.fromCache&&!(S.uid==u.uid&&Object.keys(x.all).length)))return;cinit(x.all)},e=>{CL.err=String((e&&e.code)||e);toast(tr('Bulud məlumatı yüklənmədi. İnterneti yoxla.'));cst()})}
+function cinit(r){const u=CL.u,has=Object.keys(r).length>0,loc=S.items.some(i=>!i.demo)||S.pl.t.some(q=>!q.demo)||(S.pl.r||[]).length>0;
+ if(!has){S.uid=u.uid;CL.rdy=1;save();cflush()}
+ else if(S.uid==u.uid||!loc){capply(r);CL.rdy=1}
  else{CF={r,n:Object.keys(r).filter(k=>k.startsWith('i_')).length};sa=1;render();return}
- clisten();toast(tr('Buludla sinxronlaşdırıldı'))}
+ fstart();toast(tr('Buludla sinxronlaşdırıldı'))}
 // Modul skripti girişi bildirəndə çağırır
 function cuser(u){if(u&&(!CL.u||CL.u.uid!=u.uid))cstart(u);else if(!u&&CL.u){if(CU)CU();CU=null;fstop();CL.u=null;cst();render()}}
 // İlk girişdə həm buludda, həm bu cihazda fərqli məlumat varsa: hansını saxlayaq?
@@ -1121,7 +1122,9 @@ function cshare(){const pv=PV();
  if(pv.mood)d.md={...S.md};
  if(pv.plans){d.pt=[];for(let i=-1;i<7;i++){const k=dk(addD(T0(),i));tasksOn(k).forEach(x=>d.pt.push({d:k,t:x.t,done:x.done?1:0,tm:x.tm||'',imp:x.imp?1:0}))}}
  return JSON.stringify(d)}
-function cpub(){if(!CL.u||!window.FBX||!CL.me)return;const sh=cshare();if(CH.get('pub')===sh)return;CH.set('pub',sh);const u=CL.u;
+let PBT=0,PBL=0;
+function cpub(now){if(!CL.u||!window.FBX||!CL.me)return;const w=18e4-(Date.now()-PBL);if(!now&&w>0){if(!PBT)PBT=setTimeout(()=>{PBT=0;cpub(1)},w);return}
+ clearTimeout(PBT);PBT=0;const sh=cshare();if(CH.get('pub')===sh)return;CH.set('pub',sh);PBL=Date.now();const u=CL.u;
  FBX.s('pub/'+u.uid,{d:sh,uname:CL.me.uname||'',name:u.name||'',photo:u.photo||'',mt:Date.now()}).catch(e=>{CL.err=String((e&&e.code)||e);cst()})}
 const ferr=e=>{toast(tr('Alınmadı')+(e&&e.code?' ('+e.code+')':''));console.warn(e)};
 async function fstart(){const u=CL.u;
@@ -1132,14 +1135,14 @@ async function fstart(){const u=CL.u;
  CL.ub.push(FBX.lc('users/'+u.uid+'/fr',async l=>{const ids=l.map(x=>x.id);await Promise.all(ids.filter(id=>!CL.pf[id]).map(id=>FBX.g('prof/'+id).then(p=>{CL.pf[id]=p||{}}).catch(()=>{CL.pf[id]={}})));
   CL.fr=ids.map(id=>({uid:id,...CL.pf[id]})).sort((a,b)=>(a.name||a.uname||'').localeCompare(b.name||b.uname||''));render()}));
  cpub();if(CL.addq){const q=CL.addq;CL.addq=null;tab='fr';fsearch(q)}render()}
-function fstop(){CL.ub.forEach(f=>f());CL.ub=[];Object.assign(CL,{me:null,ib:[],fr:[],pf:{},sr:null,fv:null,ibs:null})}
+function fstop(){clearTimeout(PBT);PBT=0;PBL=0;CL.ub.forEach(f=>f());CL.ub=[];Object.assign(CL,{me:null,ib:[],fr:[],pf:{},sr:null,fv:null,ibs:null})}
 async function funame(v){v=(v||'').trim().toLowerCase().replace(/^@/,'');
  if(!/^[a-z0-9_.]{3,20}$/.test(v)){toast(tr('3–20 simvol: kiçik hərf, rəqəm, nöqtə və ya _'));return}
  if(v==CL.me.uname)return;const u=CL.u;
  try{const ex=await FBX.g('unames/'+v);if(ex&&ex.uid!=u.uid){toast(tr('Bu ad artıq tutulub'));return}
   if(!ex)await FBX.s('unames/'+v,{uid:u.uid});const old=CL.me.uname;
   await FBX.s('prof/'+u.uid,{uname:v,name:u.name||'',photo:u.photo||''});if(old&&old!=v)FBX.x('unames/'+old).catch(()=>{});
-  CL.me={...CL.me,uname:v};CH.delete('pub');cpub();toast(tr('Yadda saxlandı'));render()}catch(e){ferr(e)}}
+  CL.me={...CL.me,uname:v};CH.delete('pub');cpub(1);toast(tr('Yadda saxlandı'));render()}catch(e){ferr(e)}}
 async function fsearch(v){v=(v||'').trim().toLowerCase().replace(/^@/,'');if(!v)return;CL.sr={q:v,busy:1};render();
  try{const n=await FBX.g('unames/'+v);if(!n){CL.sr={q:v,none:1};render();return}
   const p=await FBX.g('prof/'+n.uid);CL.sr={q:v,uid:n.uid,...(p||{uname:v})};render()}catch(e){CL.sr=null;ferr(e);render()}}
@@ -1194,7 +1197,7 @@ function pvUI(){if(!CL.u)return'';const pv=PV();
 let DAY=td();
 function dchk(m){const t=td();if(t==DAY)return false;const o=DAY;DAY=t;if(PL.sel==o)PL.sel=t;if(m)toast(tr('Yeni gün başladı'));render();return true}
 document.addEventListener('click',e=>{if(td()!=DAY){e.stopPropagation();e.preventDefault();dchk(1)}},true);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)dchk()});addEventListener('focus',()=>dchk());setInterval(()=>dchk(),60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)dchk();else if(PBT)cpub(1)});addEventListener('focus',()=>dchk());setInterval(()=>dchk(),60000);
 PL={sel:td(),mode:'d',cat:''};adopt(S);render();
 </script>
 <script type="module">
@@ -1213,7 +1216,7 @@ try{
   out:()=>A.signOut(auth),
   all:async uid=>{const s=await F.getDocs(col(uid)),r={};s.forEach(d=>{r[d.id]=d.data()});return r},
   put:(uid,k,v)=>v?F.setDoc(dd(uid,k),v):F.deleteDoc(dd(uid,k)),
-  listen:(uid,cb)=>F.onSnapshot(col(uid),s=>cb(s.docChanges().map(c=>({id:c.doc.id,data:c.type=='removed'?null:c.doc.data(),local:c.doc.metadata.hasPendingWrites})))),
+  listen:(uid,cb,er)=>F.onSnapshot(col(uid),{includeMetadataChanges:true},s=>{const all={};s.docs.forEach(d=>{all[d.id]=d.data()});cb({fromCache:s.metadata.fromCache,all,ch:s.docChanges().map(c=>({id:c.doc.id,data:c.type=='removed'?null:c.doc.data(),local:c.doc.metadata.hasPendingWrites}))})},er),
   flush:()=>Promise.race([F.waitForPendingWrites(db),new Promise(r=>setTimeout(r,4000))]),
   g:async p=>{const x=await F.getDoc(F.doc(db,...p.split('/')));return x.exists()?x.data():null},
   s:(p,v)=>F.setDoc(F.doc(db,...p.split('/')),v),
