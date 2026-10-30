@@ -293,6 +293,20 @@ select option{background:var(--sheet);color:var(--tx)}.fr2 .in,.cr .in{margin:0;
 .tpr.dn span{text-decoration:line-through;color:var(--mut)}.tpe{color:var(--mut)}
 .grip{flex:none;width:30px;height:38px;margin:0 -8px 0 -4px;display:grid;place-items:center;color:var(--mut);opacity:.75;cursor:grab;touch-action:none}.grip svg{width:18px;height:18px;fill:currentColor}
 .tk.dgp{opacity:.35}
+/* Dostlar */
+@media(max-width:899px){nav .fxn,nav .nsep{display:none}}
+.bdg{position:absolute;top:-2px;right:-2px;min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;border-radius:9px;background:var(--no);color:var(--no-on);font:700 11px/18px var(--ff);font-style:normal;text-align:center}
+.frb{position:relative}
+.fme,.fsr{display:flex;align-items:center;gap:12px;padding:14px 16px}.fme .cn,.fsr .cn{flex:1;min-width:0}
+.fsr{margin-top:10px}.fsr .x{margin-right:-6px}
+.frw{display:flex;align-items:center;gap:12px;padding:12px 0}.frw+.frw{border-top:1px solid var(--ln)}.frw .cn{flex:1;min-width:0}.frw b{font-size:15px}.frw .gh{height:40px;padding:0 12px}
+.chv2 svg{width:18px;height:18px;fill:none;stroke:var(--mut);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bk{display:inline-flex;align-items:center;gap:4px;border:0;background:none;color:var(--m2);font-weight:700;font-size:14px;padding:6px 8px 6px 0;margin-bottom:12px}.bk svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fph{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.wd.sm{grid-template-columns:repeat(7,12px);gap:5px}
+.fmd{display:flex;justify-content:space-between}.fmd div{display:grid;justify-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--mut)}.fmd i{width:26px;height:26px;border-radius:50%;background:var(--sf);display:block}
+.ad button svg{fill:none}.ad button svg circle,.ad button svg path{stroke:currentColor}
+.pvt{margin-top:8px}
 /* Hesab */
 .acc{display:flex;gap:12px;align-items:center;padding:14px;border-radius:14px;background:var(--sf)}.acc b{font-size:15px;font-weight:700}
 .ava{width:44px;height:44px;border-radius:50%;flex:none;overflow:hidden;display:grid;place-items:center;background:var(--m1);color:var(--on);font-weight:700}.ava img{width:100%;height:100%;object-fit:cover}
@@ -361,6 +375,8 @@ main{margin:0 auto;width:100%;max-width:1200px;padding:40px 48px 80px}
 .adb{padding:0 18px 0 14px}.adb span{display:inline}.adb svg{width:18px;height:18px}
 .sf{display:block;margin-top:auto;padding-top:14px;border-top:1px solid var(--ln)}
 nav .sf button{width:100%;color:var(--tx);padding:10px 12px;border-radius:12px;text-align:left}
+.sfr{display:flex;align-items:center;gap:6px}.sfr>button:first-child{flex:1;min-width:0}nav .sf .thb{width:42px;height:42px;flex:none;padding:0;display:grid;place-items:center;color:var(--mut)}nav .sf .thb:hover{color:var(--tx)}
+.nsep{height:1px;background:var(--ln);margin:10px 12px}nav .fxn{position:relative}nav .fxn .bdg{position:static;margin-left:auto}
 nav .sf button:hover{background:var(--sf)}
 nav .sf small{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
 .av{width:22px;height:22px;display:grid;place-items:center;flex:none;color:var(--mut)}
@@ -484,7 +500,7 @@ Object.assign(EN,{"{n} günlük seriya": "{n}-day streak", "{n} həftəlik seriy
 Object.assign(EN,{"Bu günə qayıt": "Back to today", "Əməliyyatlar": "Actions", "Kateqoriyaları idarə et": "Manage categories", "Kateqoriya əlavə et": "Add category", "Redaktə et": "Edit", "{d} / {n} tapşırıq tamamlanıb": "{d} of {n} tasks done"});
 Object.assign(EN,{"Sürüşdürərək yerini dəyiş": "Drag to reorder", "Yerini dəyişmək üçün sürüşdür, seçmək üçün karta bas. Bitəndə yuxarıdakı düyməyə yenidən bas.": "Drag to reorder, tap a card to select it. Tap the button above again when you are done.", "{n} fəaliyyət arxivləndi": "{n} activities archived", "{n} fəaliyyət arxivləndi#1": "1 activity archived", "{n} fəaliyyət səbətə atıldı": "{n} activities moved to Trash", "{n} fəaliyyət səbətə atıldı#1": "1 activity moved to Trash", "Seçilən fəaliyyətlər səbətə köçürüləcək. 7 gün ərzində bərpa edə bilərsən.": "The selected activities will be moved to Trash. You can restore them within 7 days.", "Bu gün üçün qeyd əlavə et": "Add a note for today", "Qeyd əlavə et": "Add a note", "Təkrarlanan plan əlavə et": "Add recurring plan", "Təkrarlanan plan": "Recurring plan", "Yeni təkrarlanan plan": "New recurring plan", "Tapşırığın adı": "Task name", "Təkrarlanma": "Repeat", "Həftənin günləri": "Weekdays", "Hər ay": "Monthly", "Ayın günü": "Day of the month", "Bu gün olmayan aylarda ayın son günü göstərilir.": "In months without this day, it shows on the last day of the month.", "Başlama tarixi": "Start date", "Bitmə tarixi": "End date", "Bitmə tarixi əlavə et": "Add end date", "Dəyişikliklər bu gündən etibarən tətbiq olunur. Keçmiş günlərə toxunulmur.": "Changes apply from today on. Past days stay as they are.", "Nəyi silmək istəyirsən?": "What do you want to delete?", "Yalnız bu gün": "Only today", "Yalnız bu tarix": "Only this date", "Bütün təkrarlar": "Whole series", "Bütün təkrarlar silinəndə keçmiş günlərə toxunulmur.": "Deleting the whole series keeps past days as they are.", "Ən azı bir gün seç": "Pick at least one day", "Tapşırığın adını yaz": "Enter a task name", "Təkrarlanan plan əlavə edildi": "Recurring plan added", "Təkrarlanan plan silindi": "Recurring plan deleted", "Bu tarixdən silindi": "Removed from this date"});
 Object.assign(EN,{'Fəaliyyətlər':'Activities','Sistem':'System','Tapşırıq yoxdur':'No tasks'});
-Object.assign(EN,{'Hesab':'Account','Daxil ol ki, məlumatların buludda saxlansın və bütün cihazlarında eyni olsun.':'Sign in to keep your data in the cloud and the same on all your devices.','Google ilə daxil ol':'Sign in with Google','Hesabdan çıx':'Sign out','Bəli, çıx':'Yes, sign out','Çıxış etsən, məlumatlar bu cihazdan silinəcək, buludda qalacaq.':'Signing out removes your data from this device. It stays in the cloud.','Hesabdan çıxdın':'Signed out','Hər şey buludda saxlanıb':'Everything is saved to the cloud','Göndərilir...':'Saving...','İnternet yoxdur, sonra göndəriləcək':'Offline. Will sync later','Xəta':'Error','Buludla sinxronlaşdırıldı':'Synced with the cloud','Bulud məlumatı yüklənmədi. İnterneti yoxla.':'Could not load cloud data. Check your connection.','Bulud xidməti yüklənmədi. İnterneti yoxla.':'Cloud service did not load. Check your connection.','Bulud xidməti yüklənmədi. İnterneti yoxla və səhifəni yenilə.':'Cloud service did not load. Check your connection and reload.','Bulud xidməti yüklənir...':'Loading cloud service...','Giriş alınmadı':'Sign-in failed','Hansı məlumat qalsın?':'Which data should we keep?','Bu hesabda artıq məlumat var və bu cihazdakından fərqlidir. Birini seç, digəri silinəcək.':'This account already has data that differs from this device. Pick one; the other will be removed.','Buluddakını saxla':'Keep cloud data','Bu cihazdakını saxla':'Keep this device','Əmin deyilsənsə, əvvəlcə ehtiyat nüsxə endir.':'Not sure? Download a backup first.','Vacib':'Important','Hobbi və vərdişlər':'Hobbies & habits','Günlük əhvalım':'My daily mood','Seriya yoxdur':'No streak','Seriya pozulmur':'The streak stays','Seriya sıfırlanır':'The streak resets','Digər seçimlər':'More options','Bir azalt':'Minus one','bu gün keçildi':'skipped today','tam imtina':'avoid completely','nəzarətdə':'in control','{n} seriya təhlükədədir':'{n} streaks at risk','{n} seriya təhlükədədir#1':'1 streak at risk','Dünəndən {n} tapşırıq qalıb':'{n} tasks left from yesterday','Dünəndən {n} tapşırıq qalıb#1':'1 task left from yesterday','Bu günə köçür':'Move to today','Daha {n} tapşırıq':'{n} more tasks','Daha {n} tapşırıq#1':'1 more task','Etdim':'Slipped','Etdim|lg':'Done','Qismən etdim':'Partly done','Etmədim':'Missed','Keçdim':'Skipped','Limit':'Limit','Yeni limit':'New limit','Edə bilmədim, geri al':'Undo “couldn’t do it”'});
+Object.assign(EN,{'Dostlar':'Friends','Tema':'Theme','Dostlarının seriyalarına bax, bir-birinizi motivasiya edin':'See your friends’ streaks and keep each other going','Dostlar üçün hesabına daxil ol.':'Sign in to use friends.','Yüklənir...':'Loading...','İstifadəçi adı seç':'Choose a username','Dostların səni bu adla tapacaq. Sonra dəyişə bilərsən.':'Friends will find you by this name. You can change it later.','3–20 simvol: kiçik hərf, rəqəm, nöqtə və ya _':'3–20 characters: lowercase letters, numbers, dot or _','Bu ad artıq tutulub':'This name is taken','Yadda saxlandı':'Saved','Dəvət linki':'Invite link','İstifadəçi adı ilə axtar':'Search by username','Axtar':'Search','Axtarılır...':'Searching...','@{n} adlı istifadəçi tapılmadı.':'No user named @{n}.','Bu sənsən':'This is you','Profilə bax':'View profile','Qəbul et':'Accept','Rədd et':'Decline','Göndərildi':'Sent','Təklif göndər':'Add friend','Təklif göndərildi':'Request sent','Bildirişlər':'Notifications','dostluq təklifini qəbul etdi':'accepted your friend request','sənə dostluq təklifi göndərdi':'sent you a friend request','{n} dostluq təklifini qəbul etdi':'{n} accepted your friend request','{n} sənə dostluq təklifi göndərdi':'{n} sent you a friend request','Hələ dostun yoxdur. Dəvət linkini göndər və ya istifadəçi adı ilə axtar.':'No friends yet. Send your invite link or search by username.','İstifadəçi adını dəyiş':'Change username','Dostluq qəbul edildi':'Friend added','Dostluqdan çıxar':'Remove friend','Bəli, dostluqdan çıxar':'Yes, remove','Dostluqdan çıxsanız, bir-birinizin profilini görə bilməyəcəksiniz.':'If you remove this friend, you won’t see each other’s profiles.','Dostluqdan çıxarıldı':'Friend removed','Bu dost hələ heç nə paylaşmayıb.':'This friend hasn’t shared anything yet.','Bu həftənin əhvalı':'Mood this week','Bu günün planları':'Today’s plans','Dostlarım görsün':'Visible to friends','Əhval':'Mood','Ayrı kartı kartın ⋯ menyusundan gizlədə bilərsən. Əhval qeydləri heç vaxt paylaşılmır.':'You can hide a single card from its ⋯ menu. Mood notes are never shared.','Dostlardan gizlət':'Hide from friends','Dostlara göstər':'Show to friends','gizli':'hidden','Alınmadı':'Something went wrong','Link kopyalandı':'Link copied','Davam-da mənə qoşul, bir-birimizin seriyalarını görək:':'Join me on Davam so we can see each other’s streaks:','Hesab':'Account','Daxil ol ki, məlumatların buludda saxlansın və bütün cihazlarında eyni olsun.':'Sign in to keep your data in the cloud and the same on all your devices.','Google ilə daxil ol':'Sign in with Google','Hesabdan çıx':'Sign out','Bəli, çıx':'Yes, sign out','Çıxış etsən, məlumatlar bu cihazdan silinəcək, buludda qalacaq.':'Signing out removes your data from this device. It stays in the cloud.','Hesabdan çıxdın':'Signed out','Hər şey buludda saxlanıb':'Everything is saved to the cloud','Göndərilir...':'Saving...','İnternet yoxdur, sonra göndəriləcək':'Offline. Will sync later','Xəta':'Error','Buludla sinxronlaşdırıldı':'Synced with the cloud','Bulud məlumatı yüklənmədi. İnterneti yoxla.':'Could not load cloud data. Check your connection.','Bulud xidməti yüklənmədi. İnterneti yoxla.':'Cloud service did not load. Check your connection.','Bulud xidməti yüklənmədi. İnterneti yoxla və səhifəni yenilə.':'Cloud service did not load. Check your connection and reload.','Bulud xidməti yüklənir...':'Loading cloud service...','Giriş alınmadı':'Sign-in failed','Hansı məlumat qalsın?':'Which data should we keep?','Bu hesabda artıq məlumat var və bu cihazdakından fərqlidir. Birini seç, digəri silinəcək.':'This account already has data that differs from this device. Pick one; the other will be removed.','Buluddakını saxla':'Keep cloud data','Bu cihazdakını saxla':'Keep this device','Əmin deyilsənsə, əvvəlcə ehtiyat nüsxə endir.':'Not sure? Download a backup first.','Vacib':'Important','Hobbi və vərdişlər':'Hobbies & habits','Günlük əhvalım':'My daily mood','Seriya yoxdur':'No streak','Seriya pozulmur':'The streak stays','Seriya sıfırlanır':'The streak resets','Digər seçimlər':'More options','Bir azalt':'Minus one','bu gün keçildi':'skipped today','tam imtina':'avoid completely','nəzarətdə':'in control','{n} seriya təhlükədədir':'{n} streaks at risk','{n} seriya təhlükədədir#1':'1 streak at risk','Dünəndən {n} tapşırıq qalıb':'{n} tasks left from yesterday','Dünəndən {n} tapşırıq qalıb#1':'1 task left from yesterday','Bu günə köçür':'Move to today','Daha {n} tapşırıq':'{n} more tasks','Daha {n} tapşırıq#1':'1 more task','Etdim':'Slipped','Etdim|lg':'Done','Qismən etdim':'Partly done','Etmədim':'Missed','Keçdim':'Skipped','Limit':'Limit','Yeni limit':'New limit','Edə bilmədim, geri al':'Undo “couldn’t do it”'});
 Object.assign(EN,{'Nümunə məlumatı':'Sample data','Bunlar sınaq üçündür. Öz kartlarını əlavə etməyə hazırsansa, təmizlə.':'This is just for trying things out. Clear it when you are ready to add your own.','Təmizlə':'Clear','Bəli, təmizlə':'Yes, clear','Nümunə təmizləndi':'Sample data cleared','Yeni gün başladı':'A new day has started'});
 let W,DAYS,MON,ML,P;
 const tr=(s,o)=>{let r=LG=='en'?((o&&o.n==1&&EN[s+'#1'])||EN[s]||s):s;r=r.split('|')[0];if(o)for(const k in o)r=r.split('{'+k+'}').join(o[k]);return r};
@@ -721,6 +737,7 @@ function mact(a,b,k){
  case'mnav':{const d=+b.dataset.d;if(MC.m=='m'){MC.mo+=d;if(MC.mo<0){MC.mo=11;MC.y--}if(MC.mo>11){MC.mo=0;MC.y++}}else MC.y+=d}break;
  case'mday':MC.day=MC.day==k?'':k;break;
  case'lang':LG=b.dataset.v=='en'?'en':'az';try{localStorage.setItem('ritm_dil',LG)}catch(e){}lang();anim=1;break;
+ case'thtog':TH=document.documentElement.getAttribute('data-tema')=='dark'?'light':'dark';try{localStorage.setItem('ritm_tema',TH)}catch(e){}thm();break;
  case'theme':TH=b.dataset.v=='system'?null:b.dataset.v;try{TH?localStorage.setItem('ritm_tema',TH):localStorage.removeItem('ritm_tema')}catch(e){}thm();break;
  default:return false}
  render();return true}
@@ -739,6 +756,7 @@ function hrw(it){const t=T0(),k=dk(t),m=mon(t),id=it.id,bad=it.type=='bad',g=tg(
  else if(l.f)q.push(`<b class="wn">${tr('Edə bilmədim')}</b>`);
  else if(!due||(it.freq<7&&!g.tm&&!g.cn))q.push(tr('bu həftə')+' '+w+'/'+nd);
  else{if(g.tm)q.push(l.m+'/'+g.tm+' '+tr('dəq'));if(g.cn)q.push(l.c+'/'+g.cn)}
+ if(it.hid&&CL.u)q.push(tr('gizli'));
  const B=(a,c,x,lb)=>`<button class="${c}${pp}" ${A(a,id,k)}${x}>${lb}</button>`;let ma;
  if(ord)ma=`<button class="ck sl${OS.includes(id)?' on':''}" ${A('osl',id)} aria-label="${tr('Seç')}" aria-pressed="${OS.includes(id)}">${svg(CK)}</button><span class="grip" title="${tr('Sürüşdürərək yerini dəyiş')}" aria-hidden="true">${GRP}</span>`;
  else if(ss)ma=`<button class="hp" ${A('skip',id,k)} title="${tr('Keçməni ləğv et')}">${tr('Keçilib')}</button>`;
@@ -747,7 +765,7 @@ function hrw(it){const t=T0(),k=dk(t),m=mon(t),id=it.id,bad=it.type=='bad',g=tg(
  else if(!g.tm&&!g.cn)ma=`<button class="hk${d?' on':''}${pp}" ${A('tick',id,k)} aria-label="${tr('Tamamla')}" aria-pressed="${d}">${svg(CK)}</button>`;
  else ma=(g.tm?B('tm','hp ac'+(d?' on':''),' data-d="1"','+5 '+tr('dəq')):'')+(g.cn?B('inc','hp ac'+(d?' on':''),'','+1'):'');
  const mi=(a,lb,hn,x)=>`<button role="menuitem" ${A(a,id,k)}${x||''}><span>${lb}</span>${hn?`<small>${hn}</small>`:''}</button>`;
- const menu=RM==id?`<div class="pmn rmn" role="menu">${ss?mi('skip',tr('Keçməni ləğv et')):mi('skip',tr('Bu günü keç'),tr('Seriya pozulmur'))}${!bad&&!ss?(l.f?mi('miss',tr('Edə bilmədim, geri al')):mi('miss',tr('Edə bilmədim'),tr('Seriya sıfırlanır'),' class="red"')):''}${!ss&&g.tm&&l.m>0?mi('tm',tr('5 dəq azalt'),'',' data-d="-1"'):''}${!ss&&g.cn&&l.c>0?mi('dec',tr('Bir azalt')):''}${mi('cfg',tr('Redaktə et'))}</div>`:'';
+ const menu=RM==id?`<div class="pmn rmn" role="menu">${ss?mi('skip',tr('Keçməni ləğv et')):mi('skip',tr('Bu günü keç'),tr('Seriya pozulmur'))}${!bad&&!ss?(l.f?mi('miss',tr('Edə bilmədim, geri al')):mi('miss',tr('Edə bilmədim'),tr('Seriya sıfırlanır'),' class="red"')):''}${!ss&&g.tm&&l.m>0?mi('tm',tr('5 dəq azalt'),'',' data-d="-1"'):''}${!ss&&g.cn&&l.c>0?mi('dec',tr('Bir azalt')):''}${(CL.u?mi('hid',tr(it.hid?'Dostlara göstər':'Dostlardan gizlət')):'')+mi('cfg',tr('Redaktə et'))}</div>`:'';
  return `<div class="hr${ord&&OS.includes(id)?' osl':''}" style="${ac(P[it.type].p)}" ${A(ord?'osl':'open',id)}><span class="ic">${svg(IC[it.type])}</span><div class="cn"><span class="nm">${esc(it.name)}</span><span class="hs">${st}${q.length?`<span class="q">· ${q.join(' · ')}</span>`:''}</span></div><div class="ra">${ord?'':`<div class="rmw"><button class="rmb${RM==id?' on':''}" data-a="rmenu" data-id="${id}" aria-label="${tr('Digər seçimlər')}" aria-haspopup="menu" aria-expanded="${RM==id}">${DOTS}</button>${menu}</div>`}${ma}</div></div>`}
 // Ana səhifədəki plan sətri: işarə qutusu, ad, saat və kateqoriya
 const htk=x=>{const c=cat(x.cat);return `<div class="htk${x.done?' dn':''}${x.imp?' im':''}"${c?` style="--cc:${CC[c.c]}"`:''} data-a="ptask" data-id="${x.id}"><button class="hcb${x.done?' on':''}${pop==x.id?' pop':''}" data-a="ptick" data-id="${x.id}" aria-label="${tr('Tamamla')}" aria-pressed="${!!x.done}">${svg(CK)}</button><div class="tb"><div class="tx">${esc(x.t)}</div>${x.tm||c||x.r||x.imp?`<div class="tm2">${ipl(x)}${x.r?`<b class="rpi" title="${tr('Təkrarlanan plan')}">${svg(RPT)}</b>`:''}${x.tm?`<em>${x.tm}</em>`:''}${c?`<i></i>${esc(c.n)}`:''}</div>`:''}</div></div>`};
@@ -759,7 +777,7 @@ function home(){const t=T0(),k=dk(t),m=mon(t),LV=live(),G=LV.filter(i=>i.type!='
  // 18:00-dan sonra: bu gün edilməsə seriyası qırılacaq kartlar (həftəlik kartda: qalan günlər normaya ancaq çatırsa)
  const wl=7-((t.getDay()+6)%7);
  RK=new Date().getHours()>=18?Lc.filter(i=>!done(i,k)&&!L(i,k).f&&streak(i).n>0&&(i.freq==7||need(i,m)-wk(i,m)>=wl)).map(i=>i.id):[];
- let h=`<div class="top"><div><p class="hdt">${dhd(t)}</p><h1>${tr('Bu gün')}</h1></div><div class="ta">${LV.length?`<button class="rb${ord?' on':''}" data-a="ord" aria-label="${tr('Sırala')}" title="${tr('Sırala')}">${svg(OR)}</button>`:''}<button class="rb gear${bkd()?' nt':''}" data-a="data" aria-label="${tr('Ayarlar')}" title="${tr('Ayarlar')}">${svg(GR)}</button><button class="adb" data-a="add" aria-label="${tr('Əlavə et')}">${svg(PLI)}<span>${tr('Əlavə et')}</span></button></div></div>`;
+ let h=`<div class="top"><div><p class="hdt">${dhd(t)}</p><h1>${tr('Bu gün')}</h1></div><div class="ta">${LV.length?`<button class="rb${ord?' on':''}" data-a="ord" aria-label="${tr('Sırala')}" title="${tr('Sırala')}">${svg(OR)}</button>`:''}<button class="rb gear frb" data-a="tab" data-t="fr" aria-label="${tr('Dostlar')}" title="${tr('Dostlar')}">${svg(FRI)}${ibn()?`<em class="bdg">${ibn()}</em>`:''}</button><button class="rb gear${bkd()?' nt':''}" data-a="data" aria-label="${tr('Ayarlar')}" title="${tr('Ayarlar')}">${svg(GR)}</button><button class="adb" data-a="add" aria-label="${tr('Əlavə et')}">${svg(PLI)}<span>${tr('Əlavə et')}</span></button></div></div>`;
  if(S.items.some(i=>i.demo)||S.pl.t.some(q=>q.demo))h+=`<div class="c bn" style="${ac('m')};cursor:default"><div class="cn"><h4>${tr('Nümunə məlumatı')}</h4><div class="sub">${tr('Bunlar sınaq üçündür. Öz kartlarını əlavə etməyə hazırsansa, təmizlə.')}</div></div><button class="${DC=='demo'?'dl on':'gh'}" style="flex:none;width:auto;margin:0;height:40px;padding:0 14px" data-a="demox">${tr(DC=='demo'?'Bəli, təmizlə':'Təmizlə')}</button></div>`;
  const ln=[pt.length?`<span class="hgo" data-a="ptoday" role="button" tabindex="0">${tr('Planlar')} ${pdn}/${pt.length}</span>`:'',Bc.length?`${tr('Limitlər')} ${okb}/${Bc.length}`:''].filter(Boolean).join(' · ');
  const hero=`<div class="c hero" style="${ac('m')}"><div class="rg"><svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="36" fill="none" style="stroke:var(--trk)" stroke-width="8"/><circle class="ring" cx="42" cy="42" r="36" fill="none" style="stroke:var(--m1)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${(Lc.length?dn/Lc.length:0)*226.2} 227" transform="rotate(-90 42 42)"${dn?'':' display="none"'}/></svg><div class="rc">${dn}/${Lc.length}</div></div><div class="hi"><div class="hl">${none&&!pt.length?tr('Hələ heç nə yoxdur'):!Lc.length?tr('Bu gün boşdur'):dn==Lc.length?tr('Hamısı tamamdır'):rem?tr('{n} iş qalıb',{n:rem}):tr('Gün tamamlandı')}</div>${none&&!pt.length?`<div class="hln">${tr('Hobbi və ya vərdiş əlavə etdikdə gündəlik irəliləyişin burada görünəcək.')}</div>`:ln?`<div class="hln">${ln}</div>`:''}${RK.length?`<div class="hrk">${tier(3,1)}${tr('{n} seriya təhlükədədir',{n:RK.length})}</div>`:''}</div></div>`;
@@ -796,7 +814,7 @@ function arcUI(){const now=Date.now(),A1=S.items.filter(i=>i.ar&&!i.dl),T1=S.ite
  return `<div class="lb">${tr('Arxiv')} (${A1.length})</div>`+(A1.length?A1.map(i=>row(i,dm(new Date(i.ar))+' · '+tr(now-i.ar<864e5?'24 saat ərzində arxivdən çıxarsan, seriya qalır':'Seriya sıfırlanacaq, statistika qalır'),`<button class="pb" ${A('unar',i.id)}>${tr('Arxivdən çıxar')}</button>`)).join(''):`<p class="hint" style="margin:0">${tr('Arxiv boşdur. Kartın ayarlarından arxivləyə bilərsən.')}</p>`)
   +`<div class="lb">${tr('Səbət')} (${T1.length})</div>`+(T1.length?`<p class="hint" style="margin:0 0 4px">${tr('Silinən kartlar 7 gün burada qalır, sonra həmişəlik silinir.')}</p>`+T1.map(i=>row(i,tr('{n} gün sonra silinəcək',{n:Math.max(1,Math.ceil((6048e5-(now-i.dl))/864e5))})+(now-i.dl<864e5?' · '+tr('24 saat ərzində bərpa etsən, seriya qalır'):''),`<button class="pb" ${A('rest',i.id)}>${tr('Bərpa et')}</button><button class="pb del${DC=='pd'+i.id?' dng':''}" ${A('purge',i.id)}>${tr(DC=='pd'+i.id?'Bəli, sil':'Həmişəlik sil')}</button>`)).join(''):`<p class="hint" style="margin:0">${tr('Səbət boşdur.')}</p>`)}
 function dsheet(){const bk=S.bk?new Date(S.bk):0;
- return `<div class="bd" data-a="close"></div><div class="sh${sa?' a':''}"><div class="hd"><h3>${tr('Ayarlar')}</h3><button class="x" data-a="close" aria-label="${tr('Bağla')}">${svg(XI)}</button></div>${accUI()}<div class="lb">${tr('Görünüş')}</div><div class="seg">${[['light',tr('Açıq')],['dark',tr('Tünd')],['system',tr('Sistem')]].map(([v,l])=>`<button class="${(TH||'system')==v?'on':''}" data-a="theme" data-v="${v}">${l}</button>`).join('')}</div><div class="lb">${tr('Dil')}</div><div class="seg">${[['az','AZ'],['en','EN']].map(([v,l])=>`<button class="${LG==v?'on':''}" data-a="lang" data-v="${v}">${l}</button>`).join('')}</div>${arcUI()}<div class="lb">${tr('Ehtiyat nüsxə')}</div><p class="hint" style="margin:0 0 6px">${tr('Məlumatların yalnız bu cihazın brauzerində saxlanır. Brauzer məlumatları silinsə, itər. Faylı saxla ki, istədiyin vaxt bərpa edə biləsən.')}</p>${bkd()?`<div class="bkw">${S.bk?tr('{n} gündür nüsxə alınmayıb. Yenisini endir.',{n:Math.floor((Date.now()-S.bk)/864e5)}):tr('Hələ nüsxə alınmayıb, məlumatlar yalnız bu cihazdadır.')}</div>`:''}<div class="sub">${bk?tr('Son nüsxə')+': '+dmy(bk):tr('Hələ nüsxə alınmayıb')}, ${tr('{n} kart',{n:live().length})}</div><button class="go" data-a="export">${tr('Ehtiyat nüsxəni endir')}</button><button class="gh" style="width:100%;margin-top:10px" data-a="impick">${tr('Nüsxədən bərpa et')}</button><input id="imp" type="file" accept=".json,application/json" hidden><p id="dmsg" class="hint"></p></div>`}
+ return `<div class="bd" data-a="close"></div><div class="sh${sa?' a':''}"><div class="hd"><h3>${tr('Ayarlar')}</h3><button class="x" data-a="close" aria-label="${tr('Bağla')}">${svg(XI)}</button></div>${accUI()}${pvUI()}<div class="lb">${tr('Görünüş')}</div><div class="seg">${[['light',tr('Açıq')],['dark',tr('Tünd')],['system',tr('Sistem')]].map(([v,l])=>`<button class="${(TH||'system')==v?'on':''}" data-a="theme" data-v="${v}">${l}</button>`).join('')}</div><div class="lb">${tr('Dil')}</div><div class="seg">${[['az','AZ'],['en','EN']].map(([v,l])=>`<button class="${LG==v?'on':''}" data-a="lang" data-v="${v}">${l}</button>`).join('')}</div>${arcUI()}<div class="lb">${tr('Ehtiyat nüsxə')}</div><p class="hint" style="margin:0 0 6px">${tr('Məlumatların yalnız bu cihazın brauzerində saxlanır. Brauzer məlumatları silinsə, itər. Faylı saxla ki, istədiyin vaxt bərpa edə biləsən.')}</p>${bkd()?`<div class="bkw">${S.bk?tr('{n} gündür nüsxə alınmayıb. Yenisini endir.',{n:Math.floor((Date.now()-S.bk)/864e5)}):tr('Hələ nüsxə alınmayıb, məlumatlar yalnız bu cihazdadır.')}</div>`:''}<div class="sub">${bk?tr('Son nüsxə')+': '+dmy(bk):tr('Hələ nüsxə alınmayıb')}, ${tr('{n} kart',{n:live().length})}</div><button class="go" data-a="export">${tr('Ehtiyat nüsxəni endir')}</button><button class="gh" style="width:100%;margin-top:10px" data-a="impick">${tr('Nüsxədən bərpa et')}</button><input id="imp" type="file" accept=".json,application/json" hidden><p id="dmsg" class="hint"></p></div>`}
 async function exp(){const mm=$('#dmsg'),m={set textContent(v){if(mm&&mm.isConnected)mm.textContent=v;else toast(v)}};try{const d=window.claude?await claude.use('downloads'):null;const fn=APP.toLowerCase()+'-nusxe-'+dk(T0())+'.json',js=JSON.stringify({app:'ritm',v:2,at:new Date().toISOString(),items:S.items,pl:S.pl,md:S.md,mn:S.mn},null,1);
  if(d)await d.save({filename:fn,data:js});else{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([js],{type:'application/json'}));a.download=fn;document.body.appendChild(a);a.click();a.remove()}
  S.bk=Date.now();save();m.textContent=tr('Nüsxə hazırdır.')}catch(e){m.textContent=tr(e&&e.code=='declined'?'Ləğv edildi.':'Yükləmək alınmadı.')}}
@@ -844,9 +862,9 @@ function imp(f){const r=new FileReader();r.onload=()=>{const dm0=$('#dmsg')||{};
 let opK=null;
 const fkey=el=>{if(!el||el==document.body||!el.getAttribute)return null;if(el.id)return '#'+CSS.escape(el.id);const at=['data-a','data-id','data-k','data-v','data-f','data-t','data-d'].filter(x=>el.hasAttribute(x));return at.length?at.map(x=>`[${x}="${CSS.escape(el.getAttribute(x))}"]`).join(''):null};
 function render(){const ae=document.activeElement,fk=fkey(ae),was=!!$('#sheet .sh'),keep={};['pi','cn'].forEach(i=>{const e=document.getElementById(i);if(e&&e.value)keep[i]=e.value});
- $('#nav').innerHTML='<div class="br">'+LOGO+'</div>'+Object.keys(P).map(t=>`<button class="${t==tab?'on':''}" style="${ac(P[t].p)}" data-a="tab" data-t="${t}">${svg(IC[t])}<span>${P[t].n}</span></button>`).join('')+`<div class="sf"><button data-a="data"><span class="av${bkd()?' nt':''}">${svg(GR)}</span><span class="at"><b>${tr('Ayarlar')}</b><small${bkd()?' class="wb2"':''}>${CL.u?esc(CL.u.name||CL.u.email):tr(bkd()?(S.bk?'Nüsxə köhnəlib':'Ehtiyat nüsxə al'):'Tema, dil, nüsxə')}</small></span></button></div>`;
+ $('#nav').innerHTML='<div class="br">'+LOGO+'</div>'+Object.keys(P).map(t=>`<button class="${t==tab?'on':''}" style="${ac(P[t].p)}" data-a="tab" data-t="${t}">${svg(IC[t])}<span>${P[t].n}</span></button>`).join('')+`<div class="nsep"></div><button class="fxn${tab=='fr'?' on':''}" style="${ac('m')}" data-a="tab" data-t="fr">${svg(FRI)}<span>${tr('Dostlar')}</span>${ibn()?`<em class="bdg">${ibn()}</em>`:''}</button><div class="sf"><div class="sfr"><button data-a="data"><span class="av${bkd()?' nt':''}">${svg(GR)}</span><span class="at"><b>${tr('Ayarlar')}</b><small${bkd()?' class="wb2"':''}>${CL.u?esc(CL.u.name||CL.u.email):tr(bkd()?(S.bk?'Nüsxə köhnəlib':'Ehtiyat nüsxə al'):'Tema, dil, nüsxə')}</small></span></button><button class="thb" data-a="thtog" aria-label="${tr('Tema')}" title="${tr('Tema')}">${svg(document.documentElement.getAttribute('data-tema')=='dark'?SUN:MOON)}</button></div></div>`;
  let h;
- if(tab=='home')h=home();else if(tab=='plan')h=planner();
+ if(tab=='home')h=home();else if(tab=='plan')h=planner();else if(tab=='fr')h=friends();
  else{const it=live().filter(i=>i.type==tab);
   h=`<div class="top"><div><h1>${P[tab].t}</h1><p class="lead">${P[tab].s}</p></div><div class="ta"><button class="adb" data-a="add" aria-label="${tr('Əlavə et')}">${svg(PLI)}<span>${tr('Əlavə et')}</span></button></div></div>`+(it.length?`<div class="grid">${it.map(x=>card(x)).join('')}</div>`:`<div class="em"><div>${tr('Hələ burada heç nə yoxdur.')}</div><button class="gh" data-a="add">${tr('Əlavə et')}</button></div>`)}
  const mn=$('#main');mn.className=anim?'fade'+(dr?' sw'+(dr>0?'l':'r'):''):'';dr=0;mn.innerHTML=h;
@@ -956,6 +974,20 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b
  else if(a=='logout'){if(DC=='lo')clogout();else{DC='lo';render()}}
  else if(a=='cfc'){const r=CF.r;CF=null;capply(r);clisten();toast(tr('Buludla sinxronlaşdırıldı'))}
  else if(a=='cfl'){CH=new Map(Object.entries(CF.r).map(([k,v])=>[k,v.d]));CF=null;S.uid=CL.u.uid;save();cflush();clisten();render();toast(tr('Buludla sinxronlaşdırıldı'))}
+ else if(a=='unsave'){const i=$('#un');funame(i&&i.value).then(()=>{if(CL.me&&CL.me.uname==((i&&i.value)||'').trim().toLowerCase().replace(/^@/,'')){CL.une=0;render()}})}
+ else if(a=='unedit'){CL.une=1;render()}
+ else if(a=='unx'){CL.une=0;render()}
+ else if(a=='fsearch'){const i=$('#fs');fsearch(i&&i.value)}
+ else if(a=='fsx'){CL.sr=null;render()}
+ else if(a=='freq')freq(id);
+ else if(a=='facc')facc(id);
+ else if(a=='frej'||a=='fdis')FBX.x('users/'+CL.u.uid+'/inbox/'+id).catch(ferr);
+ else if(a=='fopen'){DC='';fopen(id)}
+ else if(a=='fback'){CL.fv=null;DC='';anim=1;render()}
+ else if(a=='funf'){if(DC=='uf')funf(CL.fv.uid);else{DC='uf';render()}}
+ else if(a=='finv'){const l=invl(),t=tr('Davam-da mənə qoşul, bir-birimizin seriyalarını görək:');if(navigator.share)navigator.share({title:'Davam',text:t,url:l}).catch(()=>{});else navigator.clipboard.writeText(t+' '+l).then(()=>toast(tr('Link kopyalandı')),()=>toast(l))}
+ else if(a=='pv'){const k=b.dataset.k,pv=PV();pv[k]=pv[k]?0:1;S.pv=pv;save();render()}
+ else if(a=='hid'){if(it.hid)delete it.hid;else it.hid=1;save();render()}
  else if(a=='cfx'){CF=null;FBX.out();CL.u=null;render()}});
 document.addEventListener('change',e=>{const t=e.target;
  if(t.id=='imp'&&t.files[0])imp(t.files[0]);
@@ -969,7 +1001,7 @@ document.addEventListener('change',e=>{if(e.target.classList&&e.target.classList
 document.addEventListener('keydown',e=>{if(e.key!='Tab')return;const sh=$('#sheet .sh');if(!sh)return;
  const f=[...sh.querySelectorAll('button,input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(x=>!x.disabled&&x.offsetParent!==null);if(!f.length){e.preventDefault();return}
  const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&(i<0||i==f.length-1)){e.preventDefault();f[0].focus()}});
-document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='nm')create();if(e.key=='Escape'&&PM){PM=0;render();return}if(e.key=='Escape'&&RM){RM=null;render();return}if(e.key=='Escape'&&(F||V||D||TK||CS||MC||RT)){F=V=TK=MC=RT=null;D=CS=0;render()}});
+document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='nm')create();if(e.key=='Enter'&&e.target.id=='fs')fsearch(e.target.value);if(e.key=='Enter'&&e.target.id=='un')$('[data-a=unsave]').click();if(e.key=='Escape'&&PM){PM=0;render();return}if(e.key=='Escape'&&RM){RM=null;render();return}if(e.key=='Escape'&&(F||V||D||TK||CS||MC||RT)){F=V=TK=MC=RT=null;D=CS=0;render()}});
 // Planlar: tapşırığı sürüşdür. Siyahıda buraxanda yeri dəyişir, həftə zolağındakı başqa günə buraxanda o günə kopyalanır.
 let DG=null,noClk=0,lastDrag=0;
 function dgStart(e,el){const r=el.getBoundingClientRect(),g=el.cloneNode(true);g.classList.add('ghost');g.removeAttribute('data-a');g.style.cssText+=`;width:${r.width}px;left:${r.left}px;top:${r.top}px`;document.body.appendChild(g);el.classList.add('dgp');
@@ -1017,7 +1049,7 @@ document.addEventListener('touchend',e=>{if(!tx)return;if(DG||Date.now()-lastDra
  const X=V||MC;if(X&&s.sh){if(X.m=='m'){X.mo+=d;if(X.mo<0){X.mo=11;X.y--}if(X.mo>11){X.mo=0;X.y++}}else X.y+=d;X.day='';render();return}
  if(F||D||V||TK||CS||MC||RT||s.sh)return;
  if(tab=='plan'&&s.el.closest('.wsr,.mg')){if(PL.mode=='m')pact('pmo',{dataset:{d}});else{PL.sel=dk(addD(new Date(PL.sel+'T12:00'),d));SM=0;SEL=[];render()}return}
- const ks=Object.keys(P),i=ks.indexOf(tab)+d;if(ks[i]){tab=ks[i];anim=1;dr=d;render()}},{passive:true});
+ if(!(tab in P))return;const ks=Object.keys(P),i=ks.indexOf(tab)+d;if(ks[i]){tab=ks[i];anim=1;dr=d;render()}},{passive:true});
 document.addEventListener('input',e=>{const t=e.target;if(t.id=='tt'){const x=S.pl.t.find(q=>q.id==TK);if(x&&t.value.trim()){x.t=t.value;save()}}else if(t.classList.contains('ci')){const c=cat(t.dataset.id);if(c&&t.value.trim()){c.n=t.value;save()}}});
 document.addEventListener('change',e=>{if(!RT)return;const t=e.target;if(t.id=='tth'||t.id=='ttn')RT.tm=$('#tth').value+':'+$('#ttn').value;
  if(t.id=='rmd'){RT.md=+t.value;render()}if(t.id=='rf'&&t.value){RT.from=t.value;if(RT.to&&RT.to<RT.from)RT.to=RT.from;render()}if(t.id=='rto'&&t.value)RT.to=t.value});
@@ -1029,18 +1061,19 @@ document.addEventListener('keydown',e=>{if(e.key!='Enter')return;if(e.target.id=
 // Hər sənəd: {d: JSON mətni, t: kartın növü, mt: vaxt}. localStorage yerli nüsxə olaraq qalır, internetsiz də işləyir.
 // Firebase bağlantısı (FBX) faylın sonundakı modul skriptdədir; burada yalnız qaydalar var.
 const CL={u:null,pend:0,err:''};let CH=new Map(),CD=new Set(),CT=0,CF=null,CU=null;
-const cdocs=()=>{const o={};S.items.forEach(i=>{o['i_'+i.id]={d:JSON.stringify(i),t:i.type}});o.plans={d:JSON.stringify(S.pl)};o.mood={d:JSON.stringify({md:S.md,mn:S.mn})};o.main={d:JSON.stringify({bk:S.bk||0,bx:S.bx||'',dmd:S.dmd||null,ord:S.items.map(i=>i.id)})};return o};
+const cdocs=()=>{const o={};S.items.forEach(i=>{o['i_'+i.id]={d:JSON.stringify(i),t:i.type}});o.plans={d:JSON.stringify(S.pl)};o.mood={d:JSON.stringify({md:S.md,mn:S.mn})};o.main={d:JSON.stringify({bk:S.bk||0,bx:S.bx||'',dmd:S.dmd||null,ord:S.items.map(i=>i.id),pv:S.pv||null})};return o};
 function cord(ord){const p=new Map(ord.map((id,i)=>[id,i]));S.items.sort((a,b)=>(p.has(a.id)?p.get(a.id):1e9)-(p.has(b.id)?p.get(b.id):1e9))}
 function cfrom(r){const n={items:[],pl:{t:[],c:[],r:[]},md:{},mn:{}};let ord=null;
  for(const k in r){let v;try{v=JSON.parse(r[k].d)}catch(e){continue}
-  if(k.startsWith('i_'))n.items.push(v);else if(k=='plans')n.pl=v;else if(k=='mood'){n.md=v.md||{};n.mn=v.mn||{}}else if(k=='main'){if(v.bk)n.bk=v.bk;if(v.bx)n.bx=v.bx;if(v.dmd)n.dmd=v.dmd;ord=v.ord}}
+  if(k.startsWith('i_'))n.items.push(v);else if(k=='plans')n.pl=v;else if(k=='mood'){n.md=v.md||{};n.mn=v.mn||{}}else if(k=='main'){if(v.bk)n.bk=v.bk;if(v.bx)n.bx=v.bx;if(v.dmd)n.dmd=v.dmd;if(v.pv)n.pv=v.pv;ord=v.ord}}
  if(ord){const p=new Map(ord.map((id,i)=>[id,i]));n.items.sort((a,b)=>(p.has(a.id)?p.get(a.id):1e9)-(p.has(b.id)?p.get(b.id):1e9))}
  return n}
 const cst=()=>{if(D||CF)render()};
 function cput(k,v){const uid=CL.u.uid;CL.pend++;cst();FBX.put(uid,k,v).then(()=>{CL.err=''},e=>{CL.err=String((e&&e.code)||e)}).finally(()=>{CL.pend--;CD.delete(k);cst()})}
 function cflush(){if(!CL.u||!window.FBX||CF)return;const o=cdocs();
  for(const k in o)if(CH.get(k)!==o[k].d){CH.set(k,o[k].d);CD.add(k);cput(k,{...o[k],mt:Date.now()})}
- for(const k of [...CH.keys()])if(!(k in o)){CH.delete(k);CD.add(k);cput(k,null)}}
+ for(const k of [...CH.keys()])if(!(k in o)&&k!='pub'){CH.delete(k);CD.add(k);cput(k,null)}
+ cpub()}
 function cpush(){if(!CL.u||!window.FBX||CF)return;clearTimeout(CT);CT=setTimeout(cflush,500)}
 // Başqa cihazdan gələn dəyişikliklər. Bu cihazda hələ göndərilməmiş sənədlərə toxunulmur.
 function cremote(ch){let n=0;
@@ -1049,10 +1082,10 @@ function cremote(ch){let n=0;
   if(CH.get(k)===d)continue;CH.set(k,d);let v;try{v=JSON.parse(d)}catch(e){continue}n++;
   if(k.startsWith('i_')){const i=S.items.findIndex(x=>x.id==v.id);if(i<0)S.items.push(v);else S.items[i]=v}
   else if(k=='plans')S.pl=v;else if(k=='mood'){S.md=v.md||{};S.mn=v.mn||{}}
-  else if(k=='main'){if(v.bk)S.bk=v.bk;S.bx=v.bx||'';if(v.ord)cord(v.ord)}}
+  else if(k=='main'){if(v.bk)S.bk=v.bk;S.bx=v.bx||'';if(v.pv)S.pv=v.pv;if(v.ord)cord(v.ord)}}
  if(n){adopt(S);save();render()}}
 function capply(r){const n=cfrom(r);n.uid=CL.u.uid;n.rv=S.rv;if(!n.bk&&S.bk)n.bk=S.bk;adopt(n);CH=new Map(Object.entries(r).map(([k,v])=>[k,v.d]));save();anim=1;render()}
-function clisten(){if(CU)CU();CU=FBX.listen(CL.u.uid,cremote)}
+function clisten(){if(CU)CU();CU=FBX.listen(CL.u.uid,cremote);fstart()}
 async function cstart(u){CL.u=u;CL.err='';CH=new Map();CD=new Set();cst();
  let r;try{r=await FBX.all(u.uid)}catch(e){CL.err=String((e&&e.code)||e);toast(tr('Bulud məlumatı yüklənmədi. İnterneti yoxla.'));cst();return}
  const has=Object.keys(r).length>0,loc=S.items.some(i=>!i.demo)||S.pl.t.some(q=>!q.demo)||(S.pl.r||[]).length>0;
@@ -1061,7 +1094,7 @@ async function cstart(u){CL.u=u;CL.err='';CH=new Map();CD=new Set();cst();
  else{CF={r,n:Object.keys(r).filter(k=>k.startsWith('i_')).length};sa=1;render();return}
  clisten();toast(tr('Buludla sinxronlaşdırıldı'))}
 // Modul skripti girişi bildirəndə çağırır
-function cuser(u){if(u&&(!CL.u||CL.u.uid!=u.uid))cstart(u);else if(!u&&CL.u){if(CU)CU();CU=null;CL.u=null;cst();render()}}
+function cuser(u){if(u&&(!CL.u||CL.u.uid!=u.uid))cstart(u);else if(!u&&CL.u){if(CU)CU();CU=null;fstop();CL.u=null;cst();render()}}
 // İlk girişdə həm buludda, həm bu cihazda fərqli məlumat varsa: hansını saxlayaq?
 function cfsheet(){const ln=S.items.filter(i=>!i.dl).length;
  return `<div class="bd"></div><div class="sh${sa?' a':''}" style="${ac('m')}"><h3>${tr('Hansı məlumat qalsın?')}</h3><p class="sub">${tr('Bu hesabda artıq məlumat var və bu cihazdakından fərqlidir. Birini seç, digəri silinəcək.')}</p><button class="go" data-a="cfc">${tr('Buluddakını saxla')} · ${tr('{n} kart',{n:CF.n})}</button><button class="gh" style="width:100%;margin-top:10px;height:50px" data-a="cfl">${tr('Bu cihazdakını saxla')} · ${tr('{n} kart',{n:ln})}</button><p class="hint">${tr('Əmin deyilsənsə, əvvəlcə ehtiyat nüsxə endir.')}</p><div class="fr2" style="margin-top:12px"><button class="gh" style="flex:1" data-a="export">${tr('Ehtiyat nüsxəni endir')}</button><button class="gh" style="flex:1" data-a="cfx">${tr('Ləğv et')}</button></div><p id="dmsg" class="hint"></p></div>`}
@@ -1070,8 +1103,89 @@ function accUI(){if(!window.FBX&&!CL.u)return `<div class="acc"><div class="cn">
  if(!CL.u)return `<div class="acc"><div class="cn"><b>${tr('Hesab')}</b><div class="sub">${tr('Daxil ol ki, məlumatların buludda saxlansın və bütün cihazlarında eyni olsun.')}</div></div></div><button class="go" style="margin-top:12px" data-a="login">${tr('Google ilə daxil ol')}</button>`;
  const u=CL.u,st=CL.err?tr('Xəta')+': '+esc(CL.err):CL.pend?(navigator.onLine?tr('Göndərilir...'):tr('İnternet yoxdur, sonra göndəriləcək')):tr('Hər şey buludda saxlanıb');
  return `<div class="acc"><span class="ava">${u.photo?`<img src="${esc(u.photo)}" alt="" referrerpolicy="no-referrer">`:esc((u.name||u.email||'?')[0].toUpperCase())}</span><div class="cn"><b>${esc(u.name||u.email)}</b><div class="sub">${esc(u.email)}</div><div class="acs${CL.err?' er':CL.pend?' pd':''}">${st}</div></div></div>${DC=='lo'?`<p class="hint">${tr('Çıxış etsən, məlumatlar bu cihazdan silinəcək, buludda qalacaq.')}</p>`:''}<button class="${DC=='lo'?'dl on':'gh'}" style="width:100%;margin-top:12px${DC=='lo'?'':';height:46px'}" data-a="logout">${tr(DC=='lo'?'Bəli, çıx':'Hesabdan çıx')}</button>`}
-async function clogout(){try{await FBX.flush()}catch(e){}if(CU)CU();CU=null;try{await FBX.out()}catch(e){}
+async function clogout(){try{await FBX.flush()}catch(e){}if(CU)CU();CU=null;fstop();if(tab=='fr')tab='home';try{await FBX.out()}catch(e){}
  CL.u=null;CH=new Map();CD=new Set();const keep={bk:S.bk};adopt({items:[],rv:S.rv});S.bk=keep.bk;delete S.uid;DC='';save();anim=1;render();toast(tr('Hesabdan çıxdın'))}
+// ---------- Dostlar: profil, dostluq təklifləri, bildirişlər və dostlara açıq nüsxə ----------
+// prof/{uid}: {uname,name,photo} · unames/{ad}: {uid} · users/{uid}/fr/{dostUid} · users/{uid}/inbox/{göndərənUid}: {type:'req'|'acc',...}
+// pub/{uid}: dostların görə biləcəyi süzülmüş nüsxə (gizli bölmələr və gizlədilən kartlar daxil deyil, qeydlər heç vaxt paylaşılmır)
+const FRI='<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.7 3.5 6"/>';
+const SUN='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',MOON='<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>';
+const PVD={hobby:1,good:1,bad:1,mood:1,plans:0},PV=()=>({...PVD,...(S.pv||{})});
+Object.assign(CL,{me:null,ib:[],fr:[],pf:{},sent:new Set(),sr:null,fv:null,addq:null,ibs:null,ub:[]});
+const ibn=()=>CL.ib.length;
+function cshare(){const pv=PV(),lim=dk(addD(T0(),-400)),ml=dk(addD(T0(),-60));
+ const items=S.items.filter(i=>!i.ar&&!i.dl&&!i.hid&&pv[i.type]).map(i=>{const o={...i,logs:{},skip:{}};delete o.demo;for(const k in i.logs)if(k>=lim)o.logs[k]=i.logs[k];for(const k in (i.skip||{}))if(k>=lim)o.skip[k]=1;return o});
+ const d={v:1,day:td(),items};
+ if(pv.mood){d.md={};for(const k in S.md)if(k>=ml)d.md[k]=S.md[k]}
+ if(pv.plans){d.pt=[];for(let i=-1;i<7;i++){const k=dk(addD(T0(),i));tasksOn(k).forEach(x=>d.pt.push({d:k,t:x.t,done:x.done?1:0,tm:x.tm||'',imp:x.imp?1:0}))}}
+ return JSON.stringify(d)}
+function cpub(){if(!CL.u||!window.FBX||!CL.me)return;const sh=cshare();if(CH.get('pub')===sh)return;CH.set('pub',sh);const u=CL.u;
+ FBX.s('pub/'+u.uid,{d:sh,uname:CL.me.uname||'',name:u.name||'',photo:u.photo||'',mt:Date.now()}).catch(e=>{CL.err=String((e&&e.code)||e);cst()})}
+const ferr=e=>{toast(tr('Alınmadı')+(e&&e.code?' ('+e.code+')':''));console.warn(e)};
+async function fstart(){const u=CL.u;
+ try{const p=await FBX.g('prof/'+u.uid);CL.me=p||{};if(p&&(p.name!=u.name||p.photo!=u.photo))FBX.s('prof/'+u.uid,{...p,name:u.name||'',photo:u.photo||''})}catch(e){CL.me={}}
+ CL.ub.forEach(f=>f());CL.ub=[];
+ CL.ub.push(FBX.lc('users/'+u.uid+'/inbox',l=>{const old=CL.ibs;l.sort((a,b)=>(b.at||0)-(a.at||0));CL.ib=l;CL.ibs=new Set(l.map(x=>x.id));
+  if(old)l.filter(x=>!old.has(x.id)).forEach(x=>toast(tr(x.type=='acc'?'{n} dostluq təklifini qəbul etdi':'{n} sənə dostluq təklifi göndərdi',{n:x.name||'@'+x.uname})));render()}));
+ CL.ub.push(FBX.lc('users/'+u.uid+'/fr',async l=>{const ids=l.map(x=>x.id);await Promise.all(ids.filter(id=>!CL.pf[id]).map(id=>FBX.g('prof/'+id).then(p=>{CL.pf[id]=p||{}}).catch(()=>{CL.pf[id]={}})));
+  CL.fr=ids.map(id=>({uid:id,...CL.pf[id]})).sort((a,b)=>(a.name||a.uname||'').localeCompare(b.name||b.uname||''));render()}));
+ cpub();if(CL.addq){const q=CL.addq;CL.addq=null;tab='fr';fsearch(q)}render()}
+function fstop(){CL.ub.forEach(f=>f());CL.ub=[];Object.assign(CL,{me:null,ib:[],fr:[],pf:{},sr:null,fv:null,ibs:null})}
+async function funame(v){v=(v||'').trim().toLowerCase().replace(/^@/,'');
+ if(!/^[a-z0-9_.]{3,20}$/.test(v)){toast(tr('3–20 simvol: kiçik hərf, rəqəm, nöqtə və ya _'));return}
+ if(v==CL.me.uname)return;const u=CL.u;
+ try{const ex=await FBX.g('unames/'+v);if(ex&&ex.uid!=u.uid){toast(tr('Bu ad artıq tutulub'));return}
+  if(!ex)await FBX.s('unames/'+v,{uid:u.uid});const old=CL.me.uname;
+  await FBX.s('prof/'+u.uid,{uname:v,name:u.name||'',photo:u.photo||''});if(old&&old!=v)FBX.x('unames/'+old).catch(()=>{});
+  CL.me={...CL.me,uname:v};CH.delete('pub');cpub();toast(tr('Yadda saxlandı'));render()}catch(e){ferr(e)}}
+async function fsearch(v){v=(v||'').trim().toLowerCase().replace(/^@/,'');if(!v)return;CL.sr={q:v,busy:1};render();
+ try{const n=await FBX.g('unames/'+v);if(!n){CL.sr={q:v,none:1};render();return}
+  const p=await FBX.g('prof/'+n.uid);CL.sr={q:v,uid:n.uid,...(p||{uname:v})};render()}catch(e){CL.sr=null;ferr(e);render()}}
+async function freq(to){const u=CL.u,me=CL.me;try{await FBX.s('users/'+to+'/inbox/'+u.uid,{type:'req',uname:me.uname||'',name:u.name||'',photo:u.photo||'',at:Date.now()});CL.sent.add(to);toast(tr('Təklif göndərildi'));render()}catch(e){ferr(e)}}
+async function facc(from){const u=CL.u,me=CL.me,at=Date.now();
+ try{await FBX.s('users/'+u.uid+'/fr/'+from,{at});await FBX.s('users/'+from+'/fr/'+u.uid,{at});
+  await FBX.s('users/'+from+'/inbox/'+u.uid,{type:'acc',uname:me.uname||'',name:u.name||'',photo:u.photo||'',at});
+  await FBX.x('users/'+u.uid+'/inbox/'+from);toast(tr('Dostluq qəbul edildi'))}catch(e){ferr(e)}}
+async function fopen(id){const p=CL.pf[id]||{};CL.fv={uid:id,p,busy:1};tab='fr';anim=1;render();
+ try{const r=await FBX.g('pub/'+id);let d=null;if(r&&r.d)try{d=JSON.parse(r.d)}catch(_){}
+  if(CL.fv&&CL.fv.uid==id){CL.fv={uid:id,p:{...p,name:(r&&r.name)||p.name,uname:(r&&r.uname)||p.uname,photo:(r&&r.photo)||p.photo},d,mt:r&&r.mt};render()}}catch(e){if(CL.fv)CL.fv.busy=0;ferr(e);render()}}
+async function funf(id){const u=CL.u;try{await FBX.x('users/'+u.uid+'/fr/'+id);await FBX.x('users/'+id+'/fr/'+u.uid).catch(()=>{});CL.fv=null;DC='';toast(tr('Dostluqdan çıxarıldı'));render()}catch(e){ferr(e)}}
+const ava=(p,s=44)=>`<span class="ava" style="width:${s}px;height:${s}px">${p&&p.photo?`<img src="${esc(p.photo)}" alt="" referrerpolicy="no-referrer">`:esc(((p&&(p.name||p.uname))||'?')[0].toUpperCase())}</span>`;
+const pline=p=>`<div class="cn"><b>${esc(p.name||'@'+(p.uname||''))}</b>${p.uname?`<div class="sub">@${esc(p.uname)}</div>`:''}</div>`;
+function invl(){return location.origin+location.pathname+'?add='+encodeURIComponent(CL.me.uname)}
+// Dostun profili (yalnız baxış)
+function fview(){const v=CL.fv,p=v.p||{},d=v.d,t=td(),m=mon(T0());
+ let h=`<button class="bk" data-a="fback">${svg(CHL)}<span>${tr('Dostlar')}</span></button><div class="fph">${ava(p,64)}<div class="cn"><h1 style="font-size:24px">${esc(p.name||'@'+(p.uname||''))}</h1>${p.uname?`<p class="lead">@${esc(p.uname)}</p>`:''}</div></div>`;
+ if(v.busy&&!d)return h+`<div class="em">${tr('Yüklənir...')}</div>`;
+ if(!d||(!d.items.length&&!d.md&&!d.pt))return h+`<div class="c" style="cursor:default"><div class="sub">${tr('Bu dost hələ heç nə paylaşmayıb.')}</div></div>`+fux();
+ const items=d.items.map(norm);
+ const row=it=>{const s=streak(it),T=tierN(s);return `<div class="hr" style="${ac(P[it.type].p)};cursor:default"><span class="ic">${svg(IC[it.type])}</span><div class="cn"><span class="nm">${esc(it.name)}</span><span class="hs">${s.n?`<b class="sn z${T}">${tier(T)}${s.n} ${tr(s.u,{n:s.n})}</b>`:`<span>${tr('Seriya yoxdur')}</span>`}</span></div><div class="wd sm${it.type=='bad'?' lim':''}">${W.map((w,i)=>{const k=dk(addD(m,i)),st=dv(it,k);return `<i class="d ${st}${k==t&&!st?' t':''}" title="${w}"></i>`}).join('')}</div></div>`};
+ for(const ty of ['hobby','good','bad']){const l=items.filter(i=>i.type==ty);if(l.length)h+=`<div class="sth"><h2>${P[ty].n}</h2></div><div class="c hl2">${l.map(row).join('')}</div>`}
+ if(d.md)h+=`<div class="sth"><h2>${tr('Bu həftənin əhvalı')}</h2></div><div class="c" style="cursor:default"><div class="fmd">${W.map((w,i)=>{const k=dk(addD(m,i)),x=d.md[k];return `<div><i style="${x?`background:var(--md${x})`:''}"${x?` title="${ML[x-1]}"`:''}></i><span>${w}</span></div>`}).join('')}</div></div>`;
+ if(d.pt){const l=d.pt.filter(x=>x.d==t);h+=`<div class="sth"><h2>${tr('Bu günün planları')}</h2><span>${l.filter(x=>x.done).length} / ${l.length}</span></div><div class="c hl2">${l.length?l.sort((a,b)=>b.imp-a.imp).map(x=>`<div class="htk${x.done?' dn':''}${x.imp?' im':''}" style="cursor:default"><span class="hcb${x.done?' on':''}">${svg(CK)}</span><div class="tb"><div class="tx">${esc(x.t)}</div>${x.tm||x.imp?`<div class="tm2">${ipl(x)}${x.tm?`<em>${x.tm}</em>`:''}</div>`:''}</div></div>`).join(''):`<div class="sub" style="padding:14px 0">${tr('Bu gün üçün tapşırıq yoxdur')}</div>`}</div>`}
+ return h+fux()}
+const fux=()=>`<div style="margin-top:28px">${DC=='uf'?`<p class="hint">${tr('Dostluqdan çıxsanız, bir-birinizin profilini görə bilməyəcəksiniz.')}</p>`:''}<button class="${DC=='uf'?'dl on':'dl'}" data-a="funf">${tr(DC=='uf'?'Bəli, dostluqdan çıxar':'Dostluqdan çıxar')}</button></div>`;
+// Dostlar səhifəsi
+function friends(){if(CL.fv)return fview();
+ let h=`<div class="top"><div><h1>${tr('Dostlar')}</h1><p class="lead">${tr('Dostlarının seriyalarına bax, bir-birinizi motivasiya edin')}</p></div></div>`;
+ if(!CL.u)return h+`<div class="c" style="cursor:default"><div class="sub">${tr('Dostlar üçün hesabına daxil ol.')}</div><button class="go" data-a="login">${tr('Google ilə daxil ol')}</button></div>`;
+ if(!CL.me)return h+`<div class="em">${tr('Yüklənir...')}</div>`;
+ if(!CL.me.uname||CL.une)return h+`<div class="c" style="cursor:default"><h4>${tr('İstifadəçi adı seç')}</h4><div class="sub">${tr('Dostların səni bu adla tapacaq. Sonra dəyişə bilərsən.')}</div><div class="ad" style="margin:14px 0 0"><input id="un" class="in" value="${esc(CL.me.uname||(CL.u.email||'').split('@')[0].toLowerCase().replace(/[^a-z0-9_.]/g,'').slice(0,20))}" maxlength="21" autocapitalize="off" spellcheck="false"><button data-a="unsave" aria-label="${tr('Yadda saxla')}">${svg(CK)}</button></div><p class="hint">${tr('3–20 simvol: kiçik hərf, rəqəm, nöqtə və ya _')}</p>${CL.une?`<button class="gh" style="margin-top:10px;height:40px" data-a="unx">${tr('Ləğv et')}</button>`:''}</div>`;
+ const me=CL.me,sr=CL.sr;
+ h+=`<div class="c fme" style="cursor:default">${ava({...me,name:CL.u.name,photo:CL.u.photo})}${pline({...me,name:CL.u.name})}<button class="gh" data-a="finv">${tr('Dəvət linki')}</button></div>`;
+ h+=`<div class="ad" style="margin:14px 0 0"><input id="fs" class="in" placeholder="${tr('İstifadəçi adı ilə axtar')}" autocapitalize="off" spellcheck="false" value="${sr?esc(sr.q):''}"><button data-a="fsearch" aria-label="${tr('Axtar')}"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button></div>`;
+ if(sr){const fr=sr.uid&&CL.fr.some(f=>f.uid==sr.uid),self=sr.uid==CL.u.uid,inc=sr.uid&&CL.ib.some(x=>x.id==sr.uid&&x.type=='req');
+  h+=`<div class="c fsr" style="cursor:default">${sr.busy?`<div class="sub">${tr('Axtarılır...')}</div>`:sr.none?`<div class="sub">${tr('@{n} adlı istifadəçi tapılmadı.',{n:esc(sr.q)})}</div>`:`${ava(sr)}${pline(sr)}${self?`<span class="sub">${tr('Bu sənsən')}</span>`:fr?`<button class="gh" data-a="fopen" data-id="${sr.uid}">${tr('Profilə bax')}</button>`:inc?`<button class="go" style="width:auto;margin:0;height:44px;padding:0 16px" data-a="facc" data-id="${sr.uid}">${tr('Qəbul et')}</button>`:CL.sent.has(sr.uid)?`<span class="sub">${tr('Göndərildi')}</span>`:`<button class="go" style="width:auto;margin:0;height:44px;padding:0 16px" data-a="freq" data-id="${sr.uid}">${tr('Təklif göndər')}</button>`}`}<button class="x" data-a="fsx" aria-label="${tr('Bağla')}">${svg(XI)}</button></div>`}
+ if(CL.ib.length)h+=`<div class="sth"><h2>${tr('Bildirişlər')}</h2><span>${CL.ib.length}</span></div><div class="c hl2">${CL.ib.map(x=>`<div class="frw">${ava(x,40)}<div class="cn"><b>${esc(x.name||'@'+x.uname)}</b><div class="sub">${tr(x.type=='acc'?'dostluq təklifini qəbul etdi':'sənə dostluq təklifi göndərdi')}</div></div>${x.type=='acc'?`<button class="x" data-a="fdis" data-id="${x.id}" aria-label="${tr('Bağla')}">${svg(XI)}</button>`:`<button class="gh" data-a="frej" data-id="${x.id}">${tr('Rədd et')}</button><button class="go" style="width:auto;margin:0;height:44px;padding:0 16px" data-a="facc" data-id="${x.id}">${tr('Qəbul et')}</button>`}</div>`).join('')}</div>`;
+ h+=`<div class="sth"><h2>${tr('Dostlar')}</h2><span>${CL.fr.length}</span></div>`;
+ h+=CL.fr.length?`<div class="c hl2">${CL.fr.map(f=>`<div class="frw" data-a="fopen" data-id="${f.uid}" style="cursor:pointer">${ava(f,40)}${pline(f)}<span class="chv2">${svg(CHV)}</span></div>`).join('')}</div>`:`<div class="c" style="cursor:default"><div class="sub">${tr('Hələ dostun yoxdur. Dəvət linkini göndər və ya istifadəçi adı ilə axtar.')}</div></div>`;
+ h+=`<div style="margin-top:20px"><button class="gh" style="height:40px;padding:0 14px" data-a="unedit">${tr('İstifadəçi adını dəyiş')}</button></div>`;
+ return h}
+// Ayarlarda: dostlara nə görünür
+function pvUI(){if(!CL.u)return'';const pv=PV();
+ return `<div class="lb">${tr('Dostlarım görsün')}</div>${[['hobby','Hobbilər'],['good','Vərdişlər'],['bad','Limitlər'],['mood','Əhval'],['plans','Planlar']].map(([k,l])=>`<button class="tg imt pvt" data-a="pv" data-k="${k}" aria-pressed="${!!pv[k]}"><i class="cb${pv[k]?' on':''}">${svg(CK)}</i><span>${tr(l)}</span></button>`).join('')}<p class="hint">${tr('Ayrı kartı kartın ⋯ menyusundan gizlədə bilərsən. Əhval qeydləri heç vaxt paylaşılmır.')}</p>`}
+// Dəvət linki ilə açılış: ?add=istifadəçiadı
+{const q=new URLSearchParams(location.search).get('add');if(q){CL.addq=q;tab='fr';try{history.replaceState(null,'',location.pathname)}catch(e){}}}
 let DAY=td();
 function dchk(m){const t=td();if(t==DAY)return false;const o=DAY;DAY=t;if(PL.sel==o)PL.sel=t;if(m)toast(tr('Yeni gün başladı'));render();return true}
 document.addEventListener('click',e=>{if(td()!=DAY){e.stopPropagation();e.preventDefault();dchk(1)}},true);
@@ -1095,7 +1209,11 @@ try{
   all:async uid=>{const s=await F.getDocs(col(uid)),r={};s.forEach(d=>{r[d.id]=d.data()});return r},
   put:(uid,k,v)=>v?F.setDoc(dd(uid,k),v):F.deleteDoc(dd(uid,k)),
   listen:(uid,cb)=>F.onSnapshot(col(uid),s=>cb(s.docChanges().map(c=>({id:c.doc.id,data:c.type=='removed'?null:c.doc.data(),local:c.doc.metadata.hasPendingWrites})))),
-  flush:()=>Promise.race([F.waitForPendingWrites(db),new Promise(r=>setTimeout(r,4000))])
+  flush:()=>Promise.race([F.waitForPendingWrites(db),new Promise(r=>setTimeout(r,4000))]),
+  g:async p=>{const x=await F.getDoc(F.doc(db,...p.split('/')));return x.exists()?x.data():null},
+  s:(p,v)=>F.setDoc(F.doc(db,...p.split('/')),v),
+  x:p=>F.deleteDoc(F.doc(db,...p.split('/'))),
+  lc:(p,cb)=>F.onSnapshot(F.collection(db,...p.split('/')),q=>cb(q.docs.map(d=>({id:d.id,...d.data()}))),e=>console.warn('dinləmə',p,e))
  };
  A.onAuthStateChanged(auth,u=>cuser(u&&{uid:u.uid,name:u.displayName||'',email:u.email||'',photo:u.photoURL||''}));
 }catch(e){console.warn('Firebase yüklənmədi',e);window.FBX=null;if(typeof D!='undefined'&&D)render()}
