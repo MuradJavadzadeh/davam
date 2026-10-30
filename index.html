@@ -352,7 +352,7 @@ main{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
 @media(min-width:900px){
 #app{display:grid;grid-template-columns:240px minmax(0,1fr);gap:0;max-width:none;margin:0;padding:0}
 nav{position:sticky;top:0;left:auto;right:auto;bottom:auto;height:100vh;flex-direction:column;justify-content:flex-start;gap:4px;padding:28px 14px 20px;border:0;border-right:1px solid var(--ln);box-shadow:none}
-nav .br{display:block;margin:2px 0 26px 12px;color:var(--tx);line-height:0}nav .br .lg0{width:124px;height:auto}
+nav .br{display:block;margin:2px 0 26px 12px;color:var(--tx);line-height:0}nav .br .lg0{width:124px;height:auto;stroke:none;overflow:visible}
 nav button{flex:none;flex-direction:row;gap:12px;font-size:14px;padding:11px 12px;justify-content:flex-start}
 nav button.on{background:var(--tn)}
 main{margin:0 auto;width:100%;max-width:1200px;padding:40px 48px 80px}
@@ -492,7 +492,7 @@ const dm=d=>LG=='en'?MON[d.getMonth()]+' '+d.getDate():d.getDate()+' '+MON[d.get
 const wrg=(a,b)=>{const x=a.getMonth()!=b.getMonth();return LG=='en'?MON[a.getMonth()]+' '+a.getDate()+' – '+(x?MON[b.getMonth()]+' ':'')+b.getDate():a.getDate()+(x?' '+MON[a.getMonth()]:'')+' – '+b.getDate()+' '+MON[b.getMonth()]};
 const APP='Davam';document.title=APP;
 // Loqo: hərflər mətn rəngində, "v" hücrəsi lavanda (tünd/açıq rejimə özü uyğunlaşır)
-const LOGO='<svg class="lg0" viewBox="0 20.5 327 82" role="img" aria-label="Davam"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="74.5" r="21.5"></circle><path d="M47.5 25V96"></path><circle cx="87" cy="74.5" r="21.5"></circle><path d="M108.5 53V96"></path><circle cx="215" cy="74.5" r="21.5"></circle><path d="M236.5 53V96"></path><path d="M254.5 53V96M254.5 70A17 17 0 0 1 288.5 70V96M288.5 70A17 17 0 0 1 322.5 70V96"></path></g><rect x="123" y="46.5" width="56" height="56" rx="14.5" fill="var(--m1)"></rect><path d="M137.00 75.56L146.13 87.44L165.00 61.56" fill="none" stroke="var(--on)" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+const LOGO='<svg class="lg0" viewBox="0 20.5 327 82" role="img" aria-label="Davam"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="74.5" r="21.5"></circle><path d="M47.5 25V96"></path><circle cx="87" cy="74.5" r="21.5"></circle><path d="M108.5 53V96"></path><circle cx="215" cy="74.5" r="21.5"></circle><path d="M236.5 53V96"></path><path d="M254.5 53V96M254.5 70A17 17 0 0 1 288.5 70V96M288.5 70A17 17 0 0 1 322.5 70V96"></path></g><rect x="123" y="46.5" width="56" height="56" rx="14.5" fill="var(--m1)"></rect><path d="M137.00 75.56L146.13 87.44L165.00 61.56" fill="none" stroke="#FFFFFF" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
 function lang(){({W,DAYS,MON,ML}=LX[LG]);
  P={home:{n:tr('Bu gün'),t:tr('Bu gün'),p:'m'},plan:{n:tr('Planlar'),t:tr('Planlar'),s:tr('Gündəlik və həftəlik planların'),p:'p'},hobby:{n:tr('Hobbilər'),t:tr('Hobbilər'),s:tr('Maraq dairən və fəaliyyətlərin'),p:'h'},good:{n:tr('Vərdişlər'),t:tr('Vərdişlər'),s:tr('Davam etdirdiyin yaxşı vərdişlər'),p:'g'},bad:{n:tr('Limitlər'),t:tr('Limitlər'),s:tr('Dəyişmək istədiklərin'),p:'b'}};
  document.documentElement.lang=LG}
