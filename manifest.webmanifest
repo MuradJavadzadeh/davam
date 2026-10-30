@@ -1,0 +1,27 @@
+{
+  "name": "Davam",
+  "short_name": "Davam",
+  "description": "Vərdiş, hobbi və seriya izləyicisi",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F6F4F0",
+  "theme_color": "#6C78E8",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
